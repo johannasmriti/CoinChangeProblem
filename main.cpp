@@ -3,13 +3,13 @@ using namespace std;
 
 class Solution {
 public:
-	int coinChange(vector<int>& coins, int amount) {
+	int coinChange(int len,int coins[], int amount) {
 		int dp[amount+1];
 		dp[0]=0;
 		for(int i=1;i<=amount;++i)
 			dp[i] = INT_MAX;
 		
-		int len = coins.size();
+		//int len = coins.size();
 
 		for (int i = 1; i <= amount; ++i)
 		{
@@ -28,8 +28,17 @@ public:
 };
 
 int main() {
-  vector<int> coins = {9,5,6,1};
-  int amount = 11;
+  int len;//number of coins
+  cout<<"Enter the number of Denominations: ";
+  cin>>len;
+  cout<<"Enter the coins -"<<endl;
+  int coins[len];
+  for(int i=0;i<len;i++){
+    cin>>coins[i];
+  }
+  int amount;
+  cout<<"Enter The amount: ";
+  cin>>amount;
   Solution *sol = new Solution();
-  cout<<sol->coinChange(coins, amount)<<endl;
+  cout<<"\nThe minimum number of coins needed = "<<sol->coinChange(len,coins, amount)<<endl;
 }
