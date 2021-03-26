@@ -37,3 +37,4 @@ int main() {
   cin>>amount;
   cout<<"\nThe minimum number of coins needed = "<<minChange(len,coins, amount)<<endl;
 }
+//To view the code on github: https://github.com/johannasmriti/CoinChangeProblem/blob/main/main.cpp
