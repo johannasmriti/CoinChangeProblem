@@ -1,9 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Solution {
-public:
-	int coinChange(int n,int coins[], int amount) {
+int minChange(int n,int coins[], int amount) {
     
         int dp[n+1][amount+1];
         
@@ -22,8 +20,8 @@ public:
             }
         }
         return dp[n][amount]>1e4 ? -1:dp[n][amount];
-	}
-};
+}
+
 
 int main() {
   int len;//number of coins
@@ -37,6 +35,5 @@ int main() {
   int amount;
   cout<<"Enter The amount: ";
   cin>>amount;
-  Solution *sol = new Solution();
-  cout<<"\nThe minimum number of coins needed = "<<sol->coinChange(len,coins, amount)<<endl;
+  cout<<"\nThe minimum number of coins needed = "<<minChange(len,coins, amount)<<endl;
 }
